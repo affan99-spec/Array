@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+int main() {
+    
+	int A[5];   // Give the garbage value.
+	int B[5]={1,2,3,4,5};
+	int C[10]={2,4,6}; // give the three value and rest give zero.
+	int D[5]={0};    // All value give zero. No garbage value is given.
+	int E[]={1,2,3,4,5,6};
+	
+	int i;
+	for(i=0; i<5; i++) {
+	    printf("%d ", B[i]);
+	}
+	
+	return 0;
+}
