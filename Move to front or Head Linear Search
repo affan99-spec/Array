@@ -1,0 +1,53 @@
+
+#include <iostream>
+
+using namespace std;
+
+struct Array
+{
+    int A[10];
+    int size;
+    int Length;
+};
+
+void swap(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int LinearSearch(struct Array *arr, int key)
+{
+    int i;                      
+    for(i=0; i<arr->Length; i++) 
+    {
+        if(arr->A[i]==key)
+        {
+            swap(&arr->A[i], &arr->A[0]);  // MOVE TO FRONT OR HEAD IN LINEAR SEARCH
+            return i;
+        }
+    }
+    return -1;
+}
+
+void Display(struct Array arr)
+{
+    int i;
+    cout<<"Elements are: \n";
+    for(i=0; i<arr.Length; i++) 
+    {
+        cout<<arr.A[i]<<" ";
+    }
+}
+
+int main()
+{
+    struct Array arr={{2,3,4,5,6,10,8,9},1,7};
+    int value = LinearSearch(&arr, 5);
+    cout<<"The index found is: "<<value<<endl;
+    Display(arr);
+
+    return 0;
+}
